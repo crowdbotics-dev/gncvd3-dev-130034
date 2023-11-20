@@ -8,6 +8,24 @@ function api_docs_schema_retrieve(payload) {
     params: { lang: payload.lang }
   })
 }
+function api_v1_ghbccb_list(payload) {
+  return gncvddevAPI.get(`/api/v1/ghbccb/`)
+}
+function api_v1_ghbccb_create(payload) {
+  return gncvddevAPI.post(`/api/v1/ghbccb/`, payload)
+}
+function api_v1_ghbccb_retrieve(payload) {
+  return gncvddevAPI.get(`/api/v1/ghbccb/${payload.id}/`)
+}
+function api_v1_ghbccb_update(payload) {
+  return gncvddevAPI.put(`/api/v1/ghbccb/${payload.id}/`, payload)
+}
+function api_v1_ghbccb_partial_update(payload) {
+  return gncvddevAPI.patch(`/api/v1/ghbccb/${payload.id}/`, payload)
+}
+function api_v1_ghbccb_destroy(payload) {
+  return gncvddevAPI.delete(`/api/v1/ghbccb/${payload.id}/`)
+}
 function api_v1_login_create(payload) {
   return gncvddevAPI.post(`/api/v1/login/`, payload)
 }
@@ -49,6 +67,12 @@ function rest_auth_user_partial_update(payload) {
 }
 export const apiService = {
   api_docs_schema_retrieve,
+  api_v1_ghbccb_list,
+  api_v1_ghbccb_create,
+  api_v1_ghbccb_retrieve,
+  api_v1_ghbccb_update,
+  api_v1_ghbccb_partial_update,
+  api_v1_ghbccb_destroy,
   api_v1_login_create,
   api_v1_signup_create,
   rest_auth_login_create,
